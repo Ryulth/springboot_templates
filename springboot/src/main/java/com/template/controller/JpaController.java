@@ -57,4 +57,20 @@ public class JpaController {
         cityRepository.deleteById(id);
         return cityData;
     }
+
+    @GetMapping("/findname")
+    public List<City> findByName(@RequestParam(value = "name") String name){
+        System.out.println(name);
+        List<City> cityList = new ArrayList<>();
+        cityList = cityRepository.findByName(name);
+        return cityList;
+    }
+
+    @GetMapping("/findstate")
+    public List<City> findByState(@RequestParam(value = "state") String state){
+        System.out.println(state);
+        List<City> cityList = new ArrayList<>();
+        cityList = cityRepository.findByStateContaining(state);
+        return cityList;
+    }
 }

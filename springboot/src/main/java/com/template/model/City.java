@@ -24,7 +24,7 @@ public class City implements Serializable {
     @Column(name = "createTime", nullable = false, updatable = false)
     private Calendar createTime;
 
-    @Column(name = "updateTime", nullable = false)
+    @Column(name = "updateTime")
     private Calendar updateTime;
 
     @Builder
