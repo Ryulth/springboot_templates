@@ -10,8 +10,8 @@ import java.util.Calendar;
 
 @Entity
 @Data
-
 public class City implements Serializable {
+    public static final String tableName = "test";
     @Id
     @GeneratedValue
     private Long id;
@@ -20,6 +20,9 @@ public class City implements Serializable {
 
     @Column(nullable = false)
     private String state;
+
+    @Column(name = "code",nullable = true)
+    private String code ="test";
 
     @Column(name = "createTime", nullable = false, updatable = false)
     private Calendar createTime;

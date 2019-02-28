@@ -18,7 +18,7 @@ function connect() {
     stompClient.connect({}, function (frame) {
         setConnected(true);
         console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/greetings', function (greeting) {
+        stompClient.subscribe('http://10.77.34.204:8080/topic/greetings', function (greeting) {
             showGreeting(JSON.parse(greeting.body).content);
         });
     });
